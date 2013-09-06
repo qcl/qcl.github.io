@@ -39,8 +39,48 @@
 <body>
 <div class="main-content-div">
     <div class="qcl-div">
-        <img src="img/qcl-01.png" class="img-circle qcl-img"/>
+        <div id="carousel-qcl" class="carousel slide" data-interval="5000">
+        
+        <ol class="carousel-indicators">
+            <li data-target="#carousel-qcl" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-qcl" data-slide-to="1" ></li>
+            <li data-target="#carousel-qcl" data-slide-to="2" ></li>
+            <li data-target="#carousel-qcl" data-slide-to="3" ></li>
+            <li data-target="#carousel-qcl" data-slide-to="4" ></li>
+        </ol>
+   
+        <div class="carousel-inner img-circle">
+            <div class="item active">
+                <img src="./img/qcl-01.jpg" class="qcl-img"/>
+            </div>
+            <div class="item">
+                <img src="./img/qcl-02.jpg" class="qcl-img"/>
+            </div>
+            <div class="item">
+                <img src="./img/qcl-03.jpg" class="qcl-img"/>
+            </div>
+            <div class="item">
+                <img src="./img/qcl-04.png" class="qcl-img"/>
+            </div>
+            <div class="item">
+                <img src="./img/qcl-05.jpg" class="qcl-img"/>
+            </div>
+        </div>
+
+        <a class="left carousel-control" style="background-image:none;" href="#carousel-qcl" data-slide="prev">
+            <span class="icon-prev"></span>
+        </a>
+        
+        <a class="right carousel-control" style="background-image:none;" href="#carousel-qcl" data-slide="next">
+            <span class="icon-next"></span>
+        </a>
+
+        </div>
     </div>
+
+    <script>
+    $('.carousel').carousel();
+    </script>
 
     <div class="qcl-name-div">
         <h1>李卿澄・Qing-Cheng Li</h1>
