@@ -1,3 +1,7 @@
+.sidebar{
+    z-index: 100;
+}
+
 .main-content-div{
     width: 960px;
     margin-top: 150px;
@@ -7,23 +11,23 @@
 }
 
 .qcl-img{
-    width: 250px;
+    width: 200px;
 }
 
 .qcl-div{
     position: absolute;
     top: 20px;
-    left: 115px;
+    left: 185px;
 }
 
 .qcl-name-div{
     position: absolute;
-    top: 60px;
+    top: 30px;
     left: 395px;
 }
 
 .qcl-dummy-div{
-    height: 300px;
+    height: 250px;
 }
 
 .qcl-social-div{
@@ -33,8 +37,8 @@
 }
 
 .social-btn{
-    width:42px;
-    height:42px;
+    width:28px;
+    height:28px;
     display: inline-block;
     opacity: 0.5;
     text-align: center;
