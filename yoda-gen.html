@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta property="og:image" content="img/yoda.jpg" />
+    <title>(worship) 大師語錄生產器</title>
+<style>
+.content{
+    margin: 0;
+    margin-right: auto;
+    margin-left: auto;
+    width: 640px;
+}
+
+img.cc{
+    width: 150px;
+}
+
+.sign{
+    width: 100%;
+    text-align: right;
+}
+</style>
+</head>
+<body>
+<div class="content">
+    <h1>(worship)大師語錄生產器</h1>
+    <a href="https://github.com/qcl/qcl.github.io"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"></a>
+    <canvas id="canvas" width="300" height="400"></canvas>
+    <div>
+    </div>
+    <h2>請大師開示</h2>
+    <textarea id="text" placeholder="(worship)" rows="5" cols="40"></textarea>
+    <button id="preview">預覽</button>
+    <button id="download">下載</button>
+    <div>
+    </div>
+    <img id="yodaImg" style="display:none" src="img/yoda.jpg" />
+<script>
+window.onload = function(){
+
+    var textarea = document.getElementById("text");
+    var previewBtn = document.getElementById("preview");
+    var downloadBtn = document.getElementById("download");
+    var canvas = document.getElementById("canvas");
+    var context = canvas.getContext("2d");
+    var yoda = document.getElementById("yodaImg");
+    context.drawImage(yoda, 0,0,300,300);
+
+    var gen = function(){
+
+        context.fillStyle = "#fff";
+        context.fillRect(0,300,300,400);
+
+        var startHeight = 330
+
+        if(textarea.value.length>0){
+            
+            var line = textarea.value.split("\n");
+            context.fillStyle = "#000";
+            context.font = "25pt Times New Roman"; 
+            context.textAlign = "center";
+            for(var i = 0; i<line.length; i++){
+                context.fillText(line[i], 150, 330 + 30*i);
+            }
+
+        }
+    };
+
+    previewBtn.onclick = function(){
+        gen();
+    };
+
+    downloadBtn.onclick = function(){
+        gen();
+        var dataURL = canvas.toDataURL();
+        window.open(dataURL);
+    };    
+
+};
+
+
+
+</script>
+    <hr />
+    <h2>License</h2>
+    <p>
+        <img src="img/cc.zero.large.png" class="cc" /><br/>
+        <a href="https://creativecommons.org/publicdomain/zero/1.0/deed.zh_TW">CC-0 Public Domain</a>
+    </p>
+    <hr />
+    <p class="sign">@qcl</p>
+</div>
+</body>
+</html>
