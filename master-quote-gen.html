@@ -107,12 +107,12 @@ window.onload = function(){
     };
 
     previewBtn.onclick = function(){
-        ga("send","event","MasterQuote","Preview-"+select.value,textarea.value);
+        ga("send","event","MasterQuote","Preview-"+masterSelector.value,textContent.value);
         gen();
     };
 
     downloadBtn.onclick = function(){
-        ga("send","event","MasterQuote","Download-"+select.value,textarea.value);
+        ga("send","event","MasterQuote","Download-"+masterSelector.value,textContent.value);
         gen();
         var dataURL = canvas.toDataURL();
         window.open(dataURL);
