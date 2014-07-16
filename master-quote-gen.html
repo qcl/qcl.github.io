@@ -70,6 +70,8 @@ window.onload = function(){
     var canvas = document.getElementById("canvas");
     var context = canvas.getContext("2d");
     var select = document.getElementById("master");
+
+    //Draw default Master Yoda
     var yoda = document.getElementById("yodaImg");
     context.drawImage(yoda, 0,0,300,300);
 
@@ -96,6 +98,10 @@ window.onload = function(){
 
         }
     };
+
+    select.onchange = function(){
+        gen();
+    }
 
     previewBtn.onclick = function(){
         ga("send","event","MasterQuote","Preview-"+select.value,textarea.value);
