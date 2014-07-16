@@ -51,37 +51,47 @@ img.cc{
 <script>
 window.onload = function(){
 
-    var textarea = document.getElementById("text");
+    var textContent = document.getElementById("text");
     var previewBtn = document.getElementById("preview");
     var downloadBtn = document.getElementById("download");
+    var masterSelector = document.getElementById("master");
     var canvas = document.getElementById("canvas");
     var context = canvas.getContext("2d");
-    var yoda = document.getElementById("yodaImg");
-    context.drawImage(yoda, 0,0,300,300);
 
-    var gen = function(){
+    // image area on canvas [(x0, y0), (x1, y1)]
+    var imgArea = [0, 0, 300, 300];
+    // text area on canvas [(x0, y0), (x1, y1)]
+    var textArea = [0, 300, 300, 400];
+    var lineHeight = 30;
 
-        context.clearRect(0,0,300,300);
-        var select = document.getElementById("master");
-        var img = document.getElementById(select.value);
-        context.drawImage(img, 0,0,300,300);
+    var drawMaster = function() {
+        context.clearRect.apply(context, imgArea);
+        var img = document.getElementById(masterSelector.value);
+        context.drawImage.apply(context, [img].concat(imgArea));
+    }
 
+    var drawWords = function() {
         context.fillStyle = "#fff";
-        context.fillRect(0,300,300,400);
+        context.fillRect.apply(context, textArea);
 
-        var startHeight = 330
+        var textCenter = (textArea[0] + textArea[2])/2;
 
-        if(textarea.value.length>0){
-            
-            var line = textarea.value.split("\n");
+        if(textContent.value.length>0){
+            var line = textContent.value.split("\n");
             context.fillStyle = "#000";
-            context.font = "25pt Times New Roman"; 
+            context.font = "25pt Times New Roman";
             context.textAlign = "center";
             for(var i = 0; i<line.length; i++){
-                context.fillText(line[i], 150, 330 + 30*i);
+                context.fillText(line[i], textCenter, textArea[1] + lineHeight*(i+1));
             }
 
         }
+
+    }
+
+    var gen = function(){
+        drawMaster();
+        drawWords();
     };
 
     previewBtn.onclick = function(){
@@ -92,8 +102,15 @@ window.onload = function(){
         gen();
         var dataURL = canvas.toDataURL();
         window.open(dataURL);
-    };    
+    };
 
+    masterSelector.onchange = function() {
+        drawMaster();
+    };
+
+
+    // initial
+    drawMaster();
 };
 
 
