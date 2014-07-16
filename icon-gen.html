@@ -29,6 +29,17 @@ img.cc{
     <canvas id="canvas" width="300" height="400"></canvas>
     <div>
     </div>
+
+    <h2>請選擇大師</h2>
+    <select id="master" name="master">
+      <option value="yodaImg">
+        Yoda大師
+      </option>
+      <option value="QCLImg">
+        QCL大師
+      </option>
+    </select>
+
     <h2>請大師開示</h2>
     <textarea id="text" placeholder="(worship)" rows="5" cols="40"></textarea>
     <button id="preview">預覽</button>
@@ -36,6 +47,7 @@ img.cc{
     <div>
     </div>
     <img id="yodaImg" style="display:none" src="img/yoda.jpg" />
+    <img id="QCLImg" style="display:none" src="img/qcl-05.jpg" />
 <script>
 window.onload = function(){
 
@@ -48,6 +60,11 @@ window.onload = function(){
     context.drawImage(yoda, 0,0,300,300);
 
     var gen = function(){
+
+        context.clearRect(0,0,300,300);
+        var select = document.getElementById("master");
+        var img = document.getElementById(select.value);
+        context.drawImage(img, 0,0,300,300);
 
         context.fillStyle = "#fff";
         context.fillRect(0,300,300,400);
