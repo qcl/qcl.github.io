@@ -5,6 +5,9 @@
     <meta property="og:image" content="img/yoda.jpg" />
     <meta name="description" content="大師語錄產生器，(worship)" />
     <title>(worship) 大師語錄產生器</title>
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link rel="stylesheet" href="http://goooooooogle.github.io/kp/src/kptalks-v2.css"></link>
+    <script src="http://goooooooogle.github.io/kp/src/kptalks-v2-min.js"></script>
     <script>
         
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -61,6 +64,16 @@ img.cc{
     <img id="yodaImg" style="display:none" src="img/yoda.jpg" />
     <img id="qclImg" style="display:none" src="img/qcl-05.jpg" />
 <script>
+
+$(function(){
+    $.kptalks({
+        enter_from: "right",
+        height: 230,
+        width: 232,
+        enter_distance: -75
+    }); 
+});
+
 window.onload = function(){
 
     var textContent = document.getElementById("text");
