@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<!--
+    handmade html/css (heart) by @qcl with <3
+    2015.02.14
+-->
+<head>
+<title>(heart)</title>
+<meta charset="utf-8">
+<meta property="og:title" content="(heart)" >
+<meta property="og:description" content="<3" >
+<style>
+body{
+    background: pink;
+}
+
+div#heart{
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+div.heart{
+    background: red;
+}
+
+div.beat{
+    animation-name: beat;
+    animation-iteration-count: infinite;
+    animation-duration: 0.6s;
+    animation-timing-function: linear;
+    -webkit-animation-name: beat;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-duration: 0.6s;
+    -webkit-animation-timing-function: linear;
+}
+
+@keyframes beat{
+    0% {transform: scale(1,1)}
+    25% {transform: scale(1.1,1.1)}
+    100% {transform: scale(1,1)}
+}
+
+@-webkit-keyframes beat{
+    0% {transform: scale(1,1)}
+    25% {transform: scale(1.1,1.1)}
+    100% {transform: scale(1,1)}
+}
+
+div#left-top-heart{
+    width: 100px;
+    height: 60px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    border-top-left-radius: 80px;
+    border-top-right-radius: 60px;
+}
+
+div#right-top-heart{
+    width: 100px;
+    height: 60px;
+    position: absolute;
+    top: 0px;
+    left: 100px;
+    border-top-left-radius: 60px;
+    border-top-right-radius: 80px;
+}
+
+div#right-mid-heart{
+    width: 200px;
+    height: 30px;
+    position: absolute;
+    top: 60px;
+    left: 0px;
+    border-bottom-right-radius: 15px 40px;
+    border-bottom-left-radius: 15px 40px;
+}
+
+div#bottom-heart{
+    position: absolute;
+    top: 88px;
+    left: 7px;
+    width: 0px;
+    height: 0px;
+    border-top: 100px solid red;
+    border-left: 93px solid transparent;
+    border-right: 93px solid transparent;
+}
+
+footer{
+    position: fixed;
+    bottom: 20px;
+    text-align: center;
+    width: 100%;
+}
+
+a{
+    color: #5882FA;
+}
+</style>
+<script>
+</script>
+</head>
+<body>
+    <div id="heart" class="beat">
+        <div class="heart" id="left-top-heart"></div>
+        <div class="heart" id="right-top-heart"></div>
+        <div class="heart" id="right-mid-heart"></div>
+        <div id="bottom-heart"></div>
+    </div>
+    <footer>
+        <a href="http://qcl.github.io/">@qcl</a> with &lt;3
+    </footer>
+</body>
+</html>
