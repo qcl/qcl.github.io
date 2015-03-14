@@ -9,7 +9,7 @@
 <meta charset="utf-8">
 <!-- open graph -->
 <meta property="og:title" content="(heart)" >
-<meta property="og:description" content="<3" >
+<meta property="og:description" content="Beating heart by HTML+CSS <3" >
 <meta property="og:image" content="img/heart.png" >
 <!-- for mobile device -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0" >
@@ -33,27 +33,17 @@ div.heart{
     background: red;
 }
 
-div.beat{
-    animation-name: beat;
-    animation-iteration-count: infinite;
-    animation-duration: 0.6s;
-    animation-timing-function: linear;
+div.beat {
     -webkit-animation-name: beat;
     -webkit-animation-iteration-count: infinite;
     -webkit-animation-duration: 0.6s;
     -webkit-animation-timing-function: linear;
 }
 
-@keyframes beat{
-    0% {transform: scale(1,1)}
-    25% {transform: scale(1.1,1.1)}
-    100% {transform: scale(1,1)}
-}
-
-@-webkit-keyframes beat{
-    0% {transform: scale(1,1)}
-    25% {transform: scale(1.1,1.1)}
-    100% {transform: scale(1,1)}
+@-webkit-keyframes beat {
+    0% { -webkit-transform: scale(1,1)}
+    25% { -webkit-transform: scale(1.1,1.1)}
+    100% { -webkit-transform: scale(1,1)}
 }
 
 div#left-top-heart{
